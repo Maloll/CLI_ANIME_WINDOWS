@@ -50,9 +50,9 @@ Le script ne peut pas encore detecter automatiquement l'emplacement de MPV, au p
 ---
 
 ## 🎨 Palette visuelle du script
-* <span style="color:#CA9861">■</span> **Orange** : Informations et progression.
-* <span style="color:#90EE90">■</span> **Vert Clair** : Succès de l'installation.
-* <span style="color:#FF0000">■</span> **Rouge** : Erreur critique (vérifie le fichier `error.log`).
+* 🟠 **Orange** : Informations et progression.
+* 🟢 **Vert Clair** : Succès de l'installation.
+* 🔴 **Rouge** : Erreur critique (vérifie le fichier `error.log`).
 
 ---
 Fait par [MaloOllivier](https://github.com/MaloOllivier). ❤️
