@@ -34,6 +34,7 @@ Pour regarder tes animes, utilise **Git Bash** (déjà inclus dans l'install) :
 | `ani-cli` | Menu interactif de recherche. |
 | `ani-cli -s` | Pour regarder en simultané avec syncplay. |
 | `ani-cli -u` | Met à jour l'outil vers la dernière version. |
+| `ani-cli -c` | Reprend la lecture là où tu t'étais arrêté. |
 
 ---
 
