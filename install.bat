@@ -13,12 +13,12 @@ echo %B%[*] Installation du setup en cours...%R%
 echo %O%[1/5] %B%Installation de Scoop...%R%
 powershell -Command "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force" >nul 2>> error.log
 powershell -Command "Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression" >nul 2>> error.log
-echo %O%[%R%OK%O%] %V%Scoop installé.%R%
+echo %O%[%R%OK%O%] %V%Scoop installe.%R%
 
 :: Ajout du bucket (silencieux)
 echo %O%[2/5] %B%Ajout du bucket extras...%R%
 call scoop bucket add extras >nul 2>> error.log
-echo %O%[%R%OK%O%] %V%Bucket extras ajouté.%R%
+echo %O%[%R%OK%O%] %V%Bucket extras ajoute.%R%
 
 :: Installation des logiciels (silencieux)
 :: C'est ici que ça prend du temps, mais rien ne s'affichera
