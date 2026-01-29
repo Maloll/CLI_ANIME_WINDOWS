@@ -20,10 +20,10 @@ powershell -Command "Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expres
 echo %O%[%R%OK%O%]%R% %V%Scoop installe.%R%
 
 :: Ajout du bucket (silencieux)
-title "Installation du setup [2/5]""
+title Installation du setup [2/5]
 echo %O%[%R%2/5%O%] %B%Ajout du bucket extras...%R%
 
-call scoop bucket add extras >nul 2>> error.log
+call %USERPROFILE%\scoop\shims\scoop.cmd bucket add extras >nul 2>> error.log
 
 echo %O%[%R%OK%O%]%R% %V%Bucket extras ajoute.%R%
 
