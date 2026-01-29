@@ -7,6 +7,7 @@ set "V=%ESC%[38;2;172;252;151m"
 set "B=%ESC%[94m"
 set "O=%ESC%[33m"
 set "J=%ESC%[93m"
+set "RD=%ESC%[91m"
 set "R=%ESC%[0m"
 
 echo --- Rapport d'erreurs du %date% %time% --- > error.log
