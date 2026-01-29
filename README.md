@@ -68,4 +68,4 @@ Tu souhaites faire du tri ou supprimer proprement le projet ? C’est aussi simp
 * 🔴 **Rouge** : Erreur critique (vérifie le fichier `error.log`).
 
 ---
-Fait par [MaloOllivier](https://github.com/MaloOllivier). ❤️
+Fait par [Maloll](https://github.com/Maloll). ❤️
