@@ -26,7 +26,7 @@ echo %O%[%R%OK%O%]%R% %V%Bucket extras ajoute.%R%
 :: C'est ici que ça prend du temps, mais rien ne s'affichera
 echo %O%[%R%3/5%O%] %B%Installation des logiciels...%R%
 
-start "Installation des logiciels" /wait cmd /c "%%USERPROFILE%%\scoop\shims\scoop.exe install aria2 git mpv yt-dlp ffmpeg syncplay ani-cli & timeout /t 3"
+start "Installation des logiciels" /wait cmd /c "%%USERPROFILE%%\scoop\shims\scoop.cmd install aria2 git mpv yt-dlp ffmpeg syncplay ani-cli & timeout /t 3"
 
 echo %O%[%R%OK%O%]%R% %V%Logiciels installes.%R%
 
