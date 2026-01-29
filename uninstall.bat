@@ -34,8 +34,8 @@ if exist "%USERPROFILE%\scoop\persist\syncplay" (
 )
 
 
-set /p "CONFIRM=%RD%Voulez-vous desinstaller Scoop ? %O%[%R%O/N%O%]%R% : "
-if /i "%CONFIRM%" neq "O" (
+set /p "CONFIRM2=%RD%Voulez-vous desinstaller Scoop ? %O%[%R%O/N%O%]%R% : "
+if /i "%CONFIRM2%" neq "O" (
     echo %O%Suppression de Scoop et du dossier racine...%R%
     :: Commande PowerShell pour desinstaller Scoop proprement
     powershell -Command "scoop uninstall scoop" 2>nul
