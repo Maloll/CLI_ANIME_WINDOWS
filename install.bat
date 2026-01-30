@@ -10,6 +10,8 @@ set "J=%ESC%[93m"
 set "RD=%ESC%[91m"
 set "R=%ESC%[0m"
 
+set FILTER=ForEach-Object { if ($_ -match 'Download: \[#') { Write-Host $_.ToString().Trim() } elseif ($_ -match 'Extracting') { Write-Host $_.ToString().Trim() } }
+
 echo --- LOGS du %date% %time% --- > logs.txt
 echo %B%[*] Installation du setup en cours...%R%
 
