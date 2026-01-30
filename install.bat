@@ -1,6 +1,6 @@
 @echo off
 
-title Installation du setup [0/5]
+title Installation du setup [0/6]
 
 set "ESC="
 set "V=%ESC%[38;2;172;252;151m"
@@ -14,8 +14,8 @@ echo --- LOGS du %date% %time% --- > logs.txt
 echo %B%[*] Installation du setup en cours...%R%
 
 :: Installation de Scoop (silencieux)
-title Installation du setup [1/5]
-echo %O%[%R%1/5%O%] %B%Installation de Scoop...%R%
+title Installation du setup [1/6]
+echo %O%[%R%1/6%O%] %B%Installation de Scoop...%R%
 powershell -Command "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force" >>logs.txt 2>&1
 powershell -Command "Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression" >>logs.txt 2>&1
 
@@ -27,9 +27,17 @@ if exist "%USERPROFILE%\scoop\shims\scoop.cmd" (
     exit
 )
 
+echo %O%[%R%2/6%O%] %B%Installation de git...%R%
+powershell -Command "& { & %USERPROFILE%\scoop\shims\scoop.cmd install git 2>&1 | %FILTER% }" 2>&1
+if exist "%USERPROFILE%\scoop\apps\git" (
+    echo %O%[%R%OK%O%]%R% %V%git installe.%R%
+) else (
+    echo %O%[%R%XXX%O%]%R% %RD%git n'a pas ete correctement installe.%R%
+)
+
 :: Ajout du bucket (silencieux)
-title Installation du setup [2/5]
-echo %O%[%R%2/5%O%] %B%Ajout du bucket extras...%R%
+title Installation du setup [2/6]
+echo %O%[%R%2/6%O%] %B%Ajout du bucket extras...%R%
 call %USERPROFILE%\scoop\shims\scoop.cmd bucket add extras >>logs.txt 2>&1
 if exist "%USERPROFILE%\scoop\buckets\extras" (
     echo %O%[%R%OK%O%]%R% %V%Bucket extras ajoute.%R%
@@ -40,16 +48,16 @@ if exist "%USERPROFILE%\scoop\buckets\extras" (
 )
 
 :: Installation des logiciels (silencieux)
-title Installation du setup [3/5]
-echo %O%[%R%3/5%O%] %B%Installation des logiciels...%R%
+title Installation du setup [3/6]
+echo %O%[%R%3/6%O%] %B%Installation des logiciels...%R%
 
 start "Installation des logiciels" /wait cmd /c "scoopInstalls.bat"
 
 echo %O%[%R%OK%O%]%R% %V%Logiciels installes.%R%
 
 :: --- CONFIGURATION MPV ---
-title Installation du setup [4/5]
-echo %O%[%R%4/5%O%] %B%Configuration de MPV...%R%
+title Installation du setup [4/6]
+echo %O%[%R%4/6%O%] %B%Configuration de MPV...%R%
 
 set "MPV_TARGET=%USERPROFILE%\scoop\apps\mpv\current\portable_config"
 if not exist "%MPV_TARGET%" mkdir "%MPV_TARGET%" >>logs.txt 2>&1
@@ -61,8 +69,8 @@ del "%MPV_TARGET%\mpv.zip" >>logs.txt 2>&1
 echo %O%[%R%OK%O%]%R% %V%Configuration MPV appliquee.%R%
 
 :: --- CONFIGURATION SYNCPLAY ---
-title Installation du setup [5/5]
-echo %O%[%R%5/5%O%] %B%Configuration de Syncplay...%R%
+title Installation du setup [5/6]
+echo %O%[%R%5/6%O%] %B%Configuration de Syncplay...%R%
 
 set "SYNCPLAY_PERSIST=%USERPROFILE%\scoop\persist\syncplay"
 if not exist "%SYNCPLAY_PERSIST%" mkdir "%SYNCPLAY_PERSIST%" >>logs.txt 2>&1
